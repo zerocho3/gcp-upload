@@ -1,6 +1,7 @@
-const storage = require('@google-cloud/storage')();
+const { Storage } = require('@google-cloud/storage');
 const sharp = require('sharp');
 
+const storage = new Storage();
 exports.resizeAndUpload = (data, context) => {
   const { bucket, name } = data;
   const ext = name.split('.').at(-1).toLowerCase();
