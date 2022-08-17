@@ -12,7 +12,7 @@ exports.resizeAndUpload = (data, context) => {
   const requiredFormat = ext === 'jpg' ? 'jpeg' : ext; // sharp에서는 jpg 대신 jpeg사용합니다
   console.log('name', name, 'ext', ext);
 
-  const file = storage.bucket(bucket).file(filename);
+  const file = storage.bucket(bucket).file(name);
   const readStream = file.createReadStream();
 
   const newFile = storage.bucket(bucket).file(`thumb/${filename}`);
